@@ -1,0 +1,2 @@
+# cors-override
+Обходим cors
