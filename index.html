@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>CORS server test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form onsubmit="return false;">
+            <input type="text" id="url" value="https://1c-bitrix.ru/" />
+            <input type="submit" name="submit" onclick="test()" />
+        </form>
+        <script>
+            var test = function () {
+                var url = document.getElementById("url").value;
+                var blob = new Blob(["{test5:1}"]);
+                fetch(url + "?aaa=fetch", {credentials: 'include', method: "POST", body: blob}).catch(error => console.error('Error:', error));
+                navigator.sendBeacon(url + "?aaa=beacon", blob);
+            }
+        </script>
+    </body>
+</html>
