@@ -13,8 +13,8 @@
             var test = function () {
                 var url = document.getElementById("url").value;
                 var blob = new Blob(["{test5:1}"]);
-                fetch(url + "?aaa=fetch", {credentials: 'include', method: "POST", body: blob}).catch(error => console.error('Error:', error));
-                navigator.sendBeacon(url + "?aaa=beacon", blob);
+                fetch(url + "1?aaa=fetch", {credentials: 'include', method: "POST", body: blob}).catch(error => console.error('Error:', error));
+                navigator.sendBeacon(url + "1?aaa=beacon", blob);
             }
         </script>
     </body>
